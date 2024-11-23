@@ -2,7 +2,7 @@ package org.example.simulador_restaurante;
 
 import com.almasb.fxgl.app.GameApplication;
 import com.almasb.fxgl.app.GameSettings;
-import org.example.simulador_restaurante.config.BackgroundInit;
+import org.example.simulador_restaurante.config.InitGame;
 import org.example.simulador_restaurante.config.GameConfig;
 
 public class HelloApplication extends GameApplication {
@@ -14,12 +14,12 @@ public class HelloApplication extends GameApplication {
 
     @Override
     protected void initGame() {
-        BackgroundInit.initializeBackground();
+        InitGame _initGame = new InitGame();
+        _initGame.runGame();
     }
 
     public static void main(String[] args) {
         launch(args);
     }
-
 
 }
