@@ -2,7 +2,7 @@ package org.example.simulador_restaurante.config;
 
 public class ConstantsConfig {
     public static final int WINDOW_WIDTH = 1200;
-    public static final int WINDOW_HEIGTH = 750;
+    public static final int WINDOW_HEIGTH = 760;
     public static final String CLIENT_CONSTANT = "client";
     public static final String TABLE_CONSTANT = "table";
     public static final String CHEF_CONSTANT = "chef";

@@ -9,8 +9,10 @@ public class ClientComponent {
     private static final EntityManager _entityManager = new EntityManager();
     public void spawnClient(double x, double y){
         this.clientEntity = _entityManager.spawnClient(x, y);
+        EntityUtils.scaleEntity(this.clientEntity, 0.8, 0.8);
     }
-    public void moveToPosition(double x, double y) {
+    public void moveToPosition(double x, double y, double angle) {
+        EntityUtils.rotateWithAnimation(this.clientEntity, angle);
         EntityUtils.moveTo(this.clientEntity, x, y);
     }
 }
