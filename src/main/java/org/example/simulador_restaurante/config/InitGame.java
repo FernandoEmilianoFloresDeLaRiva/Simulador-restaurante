@@ -3,7 +3,6 @@ package org.example.simulador_restaurante.config;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 import org.example.simulador_restaurante.components.ChefComponent;
-import org.example.simulador_restaurante.components.ClientComponent;
 import org.example.simulador_restaurante.components.ReceptionistComponent;
 import org.example.simulador_restaurante.components.TableComponent;
 import org.example.simulador_restaurante.entities.EntityManager;
