@@ -48,9 +48,9 @@ public class EntityManager {
         Rectangle progressBar = new Rectangle(width, heigth, Color.GREEN);
 
         progressBarBackground.setTranslateY(-20);
-        progressBarBackground.setTranslateX(40);
+        progressBarBackground.setTranslateX(60);
         progressBar.setTranslateY(-20);
-        progressBar.setTranslateX(40);
+        progressBar.setTranslateX(60);
 
         progressBar.widthProperty().bind(progress.multiply(1));
         progressBarBackground.visibleProperty().bind(progress.greaterThan(0));
