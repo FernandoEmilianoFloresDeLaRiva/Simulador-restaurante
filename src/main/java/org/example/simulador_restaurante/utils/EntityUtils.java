@@ -12,7 +12,7 @@ public class EntityUtils {
     public static void moveTo(Entity entity, double targetX, double targetY) {
         Point2D targetPosition = new Point2D(targetX, targetY);
         animationBuilder()
-                .duration(Duration.seconds(4))
+                .duration(Duration.seconds(10))
                 .interpolator(Interpolator.LINEAR)
                 .translate(entity)
                 .to(targetPosition)

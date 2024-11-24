@@ -30,16 +30,16 @@ public class InitGame {
         receptionistComponent.spawnReceptionist(870, 540);
 
         List<double[]> positions = List.of(
-                new double[]{-20, 20},
-                new double[]{-20, 130},
-                new double[]{-20, 240},
-                new double[]{-20, 350},
-                new double[]{-20, 460},
-                new double[]{440, 20},
+                new double[]{40, 130},
+                new double[]{40, 240},
+                new double[]{40, 350},
+                new double[]{40, 460},
+                new double[]{40, 570},
                 new double[]{440, 130},
                 new double[]{440, 240},
                 new double[]{440, 350},
-                new double[]{440, 460}
+                new double[]{440, 460},
+                new double[]{440, 570}
         );
         for (double[] pos : positions) {
             TableComponent table = new TableComponent();
@@ -58,15 +58,19 @@ public class InitGame {
             }
             return null;
         }, Duration.seconds(1));
-
     }
 
     private void registerFactory(){
         getGameWorld().addEntityFactory(new GameEntityFactory());
     }
 
+    private void startSoundtrack(){
+        loopBGM("soundtrack.mp3");
+    }
+
     public void runGame(){
         this.registerFactory();
+        this.startSoundtrack();
         this.initializeBackground();
     }
 
