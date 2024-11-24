@@ -9,5 +9,6 @@ public class ConstantsConfig {
     public static final String FOOD_CONSTANT = "food";
     public static final String RECEPTIONIST_CONSTANT = "receptionist";
     public static final String WAITER_CONSTANT = "waiter";
+    public static final String WALL_CONSTANT = "wall";
 
 }
