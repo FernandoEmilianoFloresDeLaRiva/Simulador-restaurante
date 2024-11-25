@@ -6,7 +6,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-class ReceptionistModel {
+public class ReceptionistModel {
     private final int capacityTables;
     private int buzyTables = 0;
     private final Queue<ClientComponent> queueClients = new LinkedList<>();

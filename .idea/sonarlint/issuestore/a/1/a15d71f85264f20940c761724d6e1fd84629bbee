@@ -1,0 +1,7 @@
+
+{
+java:S2142"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8ªÖÄ¤¶2
+W	java:S125"<This block of commented-out lines of code should be removed.(¹·Ð.8°ºË¤¶2
+W	java:S125"<This block of commented-out lines of code should be removed.(²Ë V8ÕéÐ¤¶2
+S
+java:S1068	"1Remove this unused "chefComponent" private field.(éÜò›úÿÿÿÿ8ÕéÐ¤¶2
