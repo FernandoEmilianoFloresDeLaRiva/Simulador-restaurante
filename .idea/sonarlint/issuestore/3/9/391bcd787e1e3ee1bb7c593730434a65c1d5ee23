@@ -1,4 +1,3 @@
+u	java:S116"YRename this field "_entityManager" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃŸÃ¥Ã¹â€¡8Â­ÂÃ¾Â¦Â¶2
 
-u	java:S116"YRename this field "_entityManager" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ßåù‡8¬øí£¶2
-y
-java:S1128"WRemove this unused import 'org.example.simulador_restaurante.components.FoodComponent'.(‡¾Ì®şÿÿÿÿ8¤Ê¸¥¶2
+java:S1128"WRemove this unused import 'org.example.simulador_restaurante.components.FoodComponent'.(â€¡Â¾ÃŒÂ®Ã¾Ã¿Ã¿Ã¿Ã¿8Â¤ÃŠÂ¸Â¥Â¶2
