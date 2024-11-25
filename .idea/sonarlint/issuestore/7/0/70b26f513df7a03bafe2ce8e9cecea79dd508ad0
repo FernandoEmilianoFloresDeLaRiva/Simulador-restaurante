@@ -1,0 +1,13 @@
+
+{
+java:S2142-"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(‰†πÄ8≤ë„¢∂2
+`
+java:S2276"CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(”€‚≤8ªë„¢∂2
+W	java:S125""<This block of commented-out lines of code should be removed.( ûØ%8¡–¿£∂2
+T
+java:S1481%"2Remove this unused "foodComponent" local variable.(¸âßˆ¯ˇˇˇˇ8áÄ¡£∂2
+X	java:S125&"<This block of commented-out lines of code should be removed.(ûÛ≤ñ8ŸÊ¿£∂2
+e
+java:S2276,"CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(ööıï˘ˇˇˇˇ8àƒÄ£∂2
+P
+java:S1068"3Remove this unused "waiterComponent" private field.(÷ë∆Ë8äÄ¡£∂2
