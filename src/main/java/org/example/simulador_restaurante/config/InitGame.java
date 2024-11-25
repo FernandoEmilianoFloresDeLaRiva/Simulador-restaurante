@@ -3,8 +3,10 @@ package org.example.simulador_restaurante.config;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 import org.example.simulador_restaurante.components.ChefComponent;
+import org.example.simulador_restaurante.components.FoodComponent;
 import org.example.simulador_restaurante.components.ReceptionistComponent;
 import org.example.simulador_restaurante.components.TableComponent;
+import org.example.simulador_restaurante.controllers.ManagerController;
 import org.example.simulador_restaurante.entities.EntityManager;
 import org.example.simulador_restaurante.entities.GameEntityFactory;
 
@@ -71,6 +73,7 @@ public class InitGame {
         this.registerFactory();
         this.startSoundtrack();
         this.initializeBackground();
+        ManagerController.initController();
     }
 
 }
