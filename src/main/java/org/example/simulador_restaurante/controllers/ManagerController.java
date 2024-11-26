@@ -1,5 +1,6 @@
 package org.example.simulador_restaurante.controllers;
 
+import javafx.application.Platform;
 import org.example.simulador_restaurante.components.ChefComponent;
 import org.example.simulador_restaurante.components.ClientComponent;
 import org.example.simulador_restaurante.components.ReceptionistComponent;
@@ -7,6 +8,7 @@ import org.example.simulador_restaurante.components.WaiterComponent;
 import org.example.simulador_restaurante.models.ChefModel;
 import org.example.simulador_restaurante.models.ReceptionistModel;
 import org.example.simulador_restaurante.models.WaiterModel;
+import org.example.simulador_restaurante.utils.GeneralUtils;
 
 public class ManagerController {
     public static void initController() {
@@ -28,15 +30,21 @@ public class ManagerController {
         chefController.cook();
         waiterController.atendCLient();
 
+
+
         new Thread(() -> {
             try {
-                int clienteId = 1;
-                while (true) {
-                    ClientComponent cliente = new ClientComponent();
-                    // cliente.spawnClient(900, 650);
-                    receptionistController.manageEntrance(cliente);
 
-                    Thread.sleep((int) (Math.random() * 2000)); // Tiempo aleatorio entre llegadas (Hay que cambiarlo por poison)
+                while (true) {
+                    int poissonRes = GeneralUtils.generateDistPoisson(5);
+                    System.out.println(poissonRes);
+                    ClientComponent cliente = new ClientComponent();
+                    Platform.runLater(() -> {
+                        cliente.spawnClient(900, 650);
+                        receptionistController.manageEntrance(cliente);
+                    });
+
+                    Thread.sleep(poissonRes * 1000); // Tiempo aleatorio entre llegadas (Hay que cambiarlo por poison)
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();

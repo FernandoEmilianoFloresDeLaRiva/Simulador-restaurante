@@ -16,9 +16,9 @@ public class ReceptionistController {
     public void manageEntrance(ClientComponent clientComponent) {
         new Thread(() -> {
             if (receptionistModel.tryToSit(clientComponent)) {
-                //receptionistComponent.mostrarEntradaCliente(clientComponent);
+                clientComponent.moveToPosition(0, 0, 0);
             } else {
-                //receptionistComponent.mostrarClienteEnCola(clientComponent);
+                clientComponent.moveToPosition(50, 50, 0);
             }
         }).start();
     }
