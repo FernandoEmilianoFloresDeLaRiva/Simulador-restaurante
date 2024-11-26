@@ -1,8 +1,10 @@
 package org.example.simulador_restaurante.controllers;
 
+import javafx.application.Platform;
 import org.example.simulador_restaurante.components.ClientComponent;
 import org.example.simulador_restaurante.components.FoodComponent;
 import org.example.simulador_restaurante.components.WaiterComponent;
+import org.example.simulador_restaurante.entities.EntityManager;
 import org.example.simulador_restaurante.models.ReceptionistModel;
 import org.example.simulador_restaurante.models.WaiterModel;
 
@@ -39,6 +41,7 @@ public class WaiterController {
                         //waiterComponent.mostrarComidaServida(foodComponent);
 
                         recepcionistModel.removeSeatedClient(clientComponent);
+                        Platform.runLater(() -> EntityManager.deleteEntity(clientComponent.getClientEntity()));
                         recepcionistModel.releaseTable();
 
                         Thread.sleep(500); // Simula tiempo de servir

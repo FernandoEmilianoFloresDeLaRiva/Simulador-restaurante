@@ -15,4 +15,8 @@ public class ClientComponent {
         EntityUtils.rotateWithAnimation(this.clientEntity, angle);
         EntityUtils.moveTo(this.clientEntity, x, y);
     }
+
+    public Entity getClientEntity(){
+        return this.clientEntity;
+    }
 }
