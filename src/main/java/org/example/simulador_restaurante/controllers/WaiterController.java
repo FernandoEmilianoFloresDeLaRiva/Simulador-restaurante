@@ -8,6 +8,7 @@ import org.example.simulador_restaurante.entities.EntityManager;
 import org.example.simulador_restaurante.models.ReceptionistModel;
 import org.example.simulador_restaurante.models.TableModel;
 import org.example.simulador_restaurante.models.WaiterModel;
+import org.example.simulador_restaurante.utils.EntityUtils;
 
 public class WaiterController {
     private final WaiterModel waiterModel;
@@ -39,24 +40,29 @@ public class WaiterController {
                         double[] tablePosition = tableModel.searchTableByClient(clientComponent.getId());
 
                         Platform.runLater(() -> waiterComponent.moveToPosition(tablePosition[0]+100, tablePosition[1], 5));
-
                         Thread.sleep(5000);
 
                         waiterModel.takeOrder(clientComponent);
 
+                        Platform.runLater(() -> waiterComponent.moveToPosition(200, 130, 2));
+                        Thread.sleep(5000);
+
                         FoodComponent foodComponent = waiterModel.pickupFood();
 
-                        Platform.runLater(() -> waiterComponent.moveToPosition(200, 130, 2));
-                        Thread.sleep(2000);
+                        Platform.runLater(() -> {
+                            waiterComponent.moveToPosition(tablePosition[0] + 100, tablePosition[1], 5);
+                            foodComponent.moveToPosition(tablePosition[0]-100 + 100, tablePosition[1]-100, 5);
+                        });
+                        Thread.sleep(5000);
 
-                        //waiterComponent.mostrarMovimiento("Sirviendo foodComponent al clientComponent: " + clientComponent.getNombre());
-                        //waiterComponent.mostrarComidaServida(foodComponent);
+                        Platform.runLater(() -> {
+                            EntityManager.deleteEntity(clientComponent.getClientEntity());
+                            EntityManager.deleteEntity(foodComponent.getFoodEntity());
+                        });
 
                         recepcionistModel.removeSeatedClient(clientComponent);
                         recepcionistModel.releaseTable();
-
-                        Thread.sleep(20000); // Simula tiempo de servir
-                        Platform.runLater(() -> EntityManager.deleteEntity(clientComponent.getClientEntity()));
+                        tableModel.setFreeTable(clientComponent.getId());
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     } finally {

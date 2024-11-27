@@ -17,7 +17,6 @@ public class TableModel {
                     return table;
                 })
                 .orElse(null);
-
     }
 
     public synchronized double[] searchTableByClient(int id){
@@ -25,5 +24,12 @@ public class TableModel {
                 .filter(table -> table[3] == id)
                 .findFirst()
                 .orElse(null);
+    }
+
+    public synchronized void setFreeTable(int id){
+        TABLE_LIST_CONSTANT.stream()
+                .filter(table -> table[3] == id)
+                .findFirst()
+                .map(table -> table[2] = 0);
     }
 }

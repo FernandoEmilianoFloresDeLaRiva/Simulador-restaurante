@@ -32,7 +32,6 @@ public class ChefController {
                             return null;
                         }, Duration.seconds(2));
                         Platform.runLater(() -> foodComponent.spawnFood(40, -50));
-                        System.out.println(foodComponent);
                         chefModel.notifyFoodReady(foodComponent);
                     }
                     }
