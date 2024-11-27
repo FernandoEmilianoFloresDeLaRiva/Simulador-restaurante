@@ -41,7 +41,7 @@ public class WaiterController {
                         recepcionistModel.removeSeatedClient(clientComponent);
                         recepcionistModel.releaseTable();
 
-                        Thread.sleep(500); // Simula tiempo de servir
+                        Thread.sleep(5000); // Simula tiempo de servir
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     } finally {

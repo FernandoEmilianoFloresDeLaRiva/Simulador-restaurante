@@ -11,6 +11,6 @@ public class FoodComponent {
         this.foodEntity = _entityManager.spawnFood(x, y);
     }
     public void moveToPosition(double x, double y) {
-        EntityUtils.moveTo(this.foodEntity, x, y);
+        EntityUtils.moveTo(this.foodEntity, x, y, 10);
     }
 }

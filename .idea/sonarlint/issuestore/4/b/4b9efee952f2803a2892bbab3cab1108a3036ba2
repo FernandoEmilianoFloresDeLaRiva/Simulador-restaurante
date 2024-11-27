@@ -1,8 +1,5 @@
 
-x
-java:S3923"[Remove this conditional structure or edit its code blocks so that they're not all the same.(ΨΉ½8·ώ¤¶2
-X	java:S125"<This block of commented-out lines of code should be removed.(¨Ύ8Έώ¤¶2
-]	java:S125"<This block of commented-out lines of code should be removed.(¥ƒθϋÿÿÿÿ8Έώ¤¶2
-X	java:S125"<This block of commented-out lines of code should be removed.(ί –ϋ8Ήώ¤¶2
+]	java:S125""<This block of commented-out lines of code should be removed.(¥ƒθϋÿÿÿÿ8‘αίσ¶2
+X	java:S125*"<This block of commented-out lines of code should be removed.(ί –ϋ8’αίσ¶2
 V
-java:S1068	"9Remove this unused "receptionistComponent" private field.(•π‰8Ήώ¤¶2
+java:S1068"9Remove this unused "receptionistComponent" private field.(•π‰8’αίσ¶2
