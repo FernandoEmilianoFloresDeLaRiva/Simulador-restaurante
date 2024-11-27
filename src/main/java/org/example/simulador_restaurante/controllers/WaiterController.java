@@ -3,6 +3,7 @@ package org.example.simulador_restaurante.controllers;
 import javafx.application.Platform;
 import org.example.simulador_restaurante.components.ClientComponent;
 import org.example.simulador_restaurante.components.FoodComponent;
+import org.example.simulador_restaurante.components.FoodComponent;
 import org.example.simulador_restaurante.components.WaiterComponent;
 import org.example.simulador_restaurante.entities.EntityManager;
 import org.example.simulador_restaurante.models.ReceptionistModel;
@@ -61,8 +62,16 @@ public class WaiterController {
                         });
 
                         recepcionistModel.removeSeatedClient(clientComponent);
-                        recepcionistModel.releaseTable();
                         tableModel.setFreeTable(clientComponent.getId());
+                        ClientComponent nextClient = recepcionistModel.releaseTable();
+                        if(nextClient != null){
+                        System.out.println(nextClient.getId());
+                            double[] freeTable = tableModel.searchFreeTable(nextClient.getId());
+                            System.out.println(freeTable);
+                            nextClient.moveToPosition(freeTable[0], freeTable[1], 0, 5);
+                            int x = nextClient.getX()-50;
+                            nextClient.setX(x);
+                        }
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     } finally {

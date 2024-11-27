@@ -28,7 +28,7 @@ public class ReceptionistModel {
         return false;
     }
 
-    public synchronized void releaseTable() {
+    public synchronized ClientComponent releaseTable() {
         if (buzyTables > 0) {
             buzyTables--;
             System.out.println("Mesa liberada. Mesas ocupadas: " + buzyTables);
@@ -38,8 +38,10 @@ public class ReceptionistModel {
                 ClientComponent nextClient = queueClients.poll();
                 System.out.println("Cliente " + nextClient.getId() + " es llamado desde la cola.");
                 tryToSit(nextClient);
+                return nextClient;
             }
         }
+        return null;
     }
 
     public CopyOnWriteArrayList<ClientComponent> getSeatedCustomers() {
