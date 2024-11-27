@@ -9,6 +9,7 @@ import org.example.simulador_restaurante.models.ChefModel;
 import org.example.simulador_restaurante.models.ReceptionistModel;
 import org.example.simulador_restaurante.models.TableModel;
 import org.example.simulador_restaurante.models.WaiterModel;
+import org.example.simulador_restaurante.utils.GeneralUtils;
 
 public class ManagerController {
     public static void initController() {
@@ -30,13 +31,19 @@ public class ManagerController {
         chefController.cook();
         waiterController.atendCLient();
 
+
+
         new Thread(() -> {
             try {
+
                 while (true) {
+                    int poissonRes = GeneralUtils.generateDistPoisson(5);
+                    System.out.println(poissonRes);
                     ClientComponent clientComponent = new ClientComponent();
                     receptionistController.manageEntrance(clientComponent);
                     Platform.runLater(() -> clientComponent.spawnClient());
-                    Thread.sleep((int) (Math.random() * 2000)); // Tiempo aleatorio entre llegadas (Hay que cambiarlo por poison)
+                    Thread.sleep(poissonRes * 1000); 
+
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();

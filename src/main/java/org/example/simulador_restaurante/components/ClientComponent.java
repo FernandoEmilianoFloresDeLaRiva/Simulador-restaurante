@@ -55,4 +55,8 @@ public class ClientComponent {
     public int getX() {
         return x;
     }
+
+    public Entity getClientEntity(){
+        return this.clientEntity;
+    }
 }

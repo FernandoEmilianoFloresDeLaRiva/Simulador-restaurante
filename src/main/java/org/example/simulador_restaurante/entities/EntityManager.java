@@ -59,4 +59,8 @@ public class EntityManager {
         entity.getViewComponent().addChild(progressBarBackground);
         entity.getViewComponent().addChild(progressBar);
     }
+
+    public static void deleteEntity(Entity entity){
+        entity.removeFromWorld();
+    }
 }

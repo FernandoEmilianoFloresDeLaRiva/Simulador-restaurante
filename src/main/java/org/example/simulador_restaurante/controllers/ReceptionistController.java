@@ -22,6 +22,7 @@ public class ReceptionistController {
     public void manageEntrance(ClientComponent clientComponent) {
         new Thread(() -> {
             if (receptionistModel.tryToSit(clientComponent)) {
+
                 double[] freeTable = tableModel.searchTable();
                 if (freeTable != null) {
                     Platform.runLater(() -> {
@@ -30,8 +31,9 @@ public class ReceptionistController {
                         clientComponent.setX(x);
                     });
                 }
+
             } else {
-                //receptionistComponent.mostrarClienteEnCola(clientComponent);
+                clientComponent.moveToPosition(50, 50, 0);
             }
         }).start();
     }
