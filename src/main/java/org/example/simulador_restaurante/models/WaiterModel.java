@@ -21,7 +21,7 @@ public class WaiterModel {
 
     public void takeOrder(ClientComponent client) throws InterruptedException {
         FoodComponent order = new FoodComponent();
-        System.out.println("Mesero toma la orden del cliente: " + client);
+        System.out.println("Mesero toma la orden del cliente: " + client.getId());
         chefModel.addOrder(order);
     }
 

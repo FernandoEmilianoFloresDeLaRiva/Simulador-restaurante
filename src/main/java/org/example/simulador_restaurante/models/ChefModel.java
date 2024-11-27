@@ -24,4 +24,8 @@ public class ChefModel {
     public FoodComponent getFoodDone() throws InterruptedException {
         return queueFoodDone.take();
     }
+
+    public boolean areOrdersEmpty() {
+        return queueOrders.isEmpty();
+    }
 }

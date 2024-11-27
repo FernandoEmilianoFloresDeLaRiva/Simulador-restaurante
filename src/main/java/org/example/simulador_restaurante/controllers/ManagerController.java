@@ -17,6 +17,7 @@ public class ManagerController {
         ReceptionistModel receptionistModel = new ReceptionistModel(10); // 3 mesas disponibles
         ChefModel chefModel = new ChefModel();
         WaiterModel waiterModel = new WaiterModel(chefModel);
+        TableModel tableModel = new TableModel();
 
         // Vistas
         ReceptionistComponent receptionistComponent = new ReceptionistComponent();
@@ -24,26 +25,25 @@ public class ManagerController {
         WaiterComponent waiterComponent = new WaiterComponent();
 
         // Controladores
-        ReceptionistController receptionistController = new ReceptionistController(receptionistModel, receptionistComponent);
+        ReceptionistController receptionistController = new ReceptionistController(receptionistModel, receptionistComponent, tableModel);
         ChefController chefController = new ChefController(chefModel, chefComponent);
-        WaiterController waiterController = new WaiterController(waiterModel, waiterComponent, receptionistModel);
+        WaiterController waiterController = new WaiterController(waiterModel, waiterComponent, receptionistModel, tableModel);
 
+        chefComponent.spawnChef(100, -50);
+        waiterComponent.spawnWaiter(870, 440);
         chefController.cook();
         waiterController.atendCLient();
 
-
-
         new Thread(() -> {
+            int id = 1;
             try {
-
                 while (true) {
                     int poissonRes = GeneralUtils.generateDistPoisson(5);
-                    System.out.println(poissonRes);
-                    ClientComponent clientComponent = new ClientComponent();
+                    ClientComponent clientComponent = new ClientComponent(id);
                     receptionistController.manageEntrance(clientComponent);
-                    Platform.runLater(() -> clientComponent.spawnClient());
-                    Thread.sleep(poissonRes * 1000); 
-
+                    Platform.runLater(clientComponent::spawnClient);
+                    Thread.sleep(poissonRes * 1000L);
+                    id++;
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();

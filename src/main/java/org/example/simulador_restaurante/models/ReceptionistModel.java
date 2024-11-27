@@ -20,10 +20,10 @@ public class ReceptionistModel {
         if (buzyTables < capacityTables) {
             buzyTables++;
             seatedCustomers.add(client);
-            System.out.println("Cliente " + client + " se sienta. Mesas ocupadas: " + buzyTables);
+            System.out.println("Cliente " + client.getId() + " se sienta. Mesas ocupadas: " + buzyTables);
             return true;
         }
-        System.out.println("Cliente " + client + " no encontró mesa y entra a la cola.");
+        System.out.println("Cliente " + client.getId() + " no encontró mesa y entra a la cola.");
         queueClients.add(client);
         return false;
     }
@@ -36,7 +36,7 @@ public class ReceptionistModel {
 
             if (!queueClients.isEmpty()) {
                 ClientComponent nextClient = queueClients.poll();
-                System.out.println("Cliente " + nextClient + " es llamado desde la cola.");
+                System.out.println("Cliente " + nextClient.getId() + " es llamado desde la cola.");
                 tryToSit(nextClient);
             }
         }

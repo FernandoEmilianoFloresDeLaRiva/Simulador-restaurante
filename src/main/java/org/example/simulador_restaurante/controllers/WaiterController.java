@@ -6,17 +6,20 @@ import org.example.simulador_restaurante.components.FoodComponent;
 import org.example.simulador_restaurante.components.WaiterComponent;
 import org.example.simulador_restaurante.entities.EntityManager;
 import org.example.simulador_restaurante.models.ReceptionistModel;
+import org.example.simulador_restaurante.models.TableModel;
 import org.example.simulador_restaurante.models.WaiterModel;
 
 public class WaiterController {
     private final WaiterModel waiterModel;
     private final WaiterComponent waiterComponent;
     private final ReceptionistModel recepcionistModel;
+    private final TableModel tableModel;
 
-    public WaiterController(WaiterModel model, WaiterComponent view, ReceptionistModel recepcionistModel) {
+    public WaiterController(WaiterModel model, WaiterComponent view, ReceptionistModel recepcionistModel, TableModel tableModel) {
         this.waiterModel = model;
         this.waiterComponent = view;
         this.recepcionistModel = recepcionistModel;
+        this.tableModel = tableModel;
     }
 
     public void atendCLient() {
@@ -33,18 +36,27 @@ public class WaiterController {
 
                         ClientComponent clientComponent = recepcionistModel.getSeatedCustomers().get(0);
 
-                        //waiterComponent.mostrarMovimiento("Atendiendo al clientComponent: " + clientComponent.getNombre());
+                        double[] tablePosition = tableModel.searchTableByClient(clientComponent.getId());
+
+                        Platform.runLater(() -> waiterComponent.moveToPosition(tablePosition[0]+100, tablePosition[1], 5));
+
+                        Thread.sleep(5000);
+
                         waiterModel.takeOrder(clientComponent);
 
                         FoodComponent foodComponent = waiterModel.pickupFood();
+
+                        Platform.runLater(() -> waiterComponent.moveToPosition(200, 130, 2));
+                        Thread.sleep(2000);
+
                         //waiterComponent.mostrarMovimiento("Sirviendo foodComponent al clientComponent: " + clientComponent.getNombre());
                         //waiterComponent.mostrarComidaServida(foodComponent);
 
                         recepcionistModel.removeSeatedClient(clientComponent);
-                        Platform.runLater(() -> EntityManager.deleteEntity(clientComponent.getClientEntity()));
                         recepcionistModel.releaseTable();
 
-                        Thread.sleep(5000); // Simula tiempo de servir
+                        Thread.sleep(20000); // Simula tiempo de servir
+                        Platform.runLater(() -> EntityManager.deleteEntity(clientComponent.getClientEntity()));
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     } finally {

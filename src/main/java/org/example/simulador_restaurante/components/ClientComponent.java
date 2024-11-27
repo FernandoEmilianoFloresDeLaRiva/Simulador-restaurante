@@ -11,6 +11,11 @@ public class ClientComponent {
     private static int y = 600;
     private double ownX;
     private double ownY;
+    private int id;
+
+    public ClientComponent(int id) {
+        this.id = id;
+    }
 
     public void spawnClient(){
         this.clientEntity = _entityManager.spawnClient(x, y);
@@ -56,7 +61,7 @@ public class ClientComponent {
         return x;
     }
 
-    public Entity getClientEntity(){
-        return this.clientEntity;
+    public int getId() {
+        return id;
     }
 }

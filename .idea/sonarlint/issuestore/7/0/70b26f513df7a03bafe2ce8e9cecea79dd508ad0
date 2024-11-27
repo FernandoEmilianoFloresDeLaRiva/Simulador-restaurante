@@ -1,13 +1,14 @@
 
 {
-java:S2142-"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8²‘ã¢¶2
+java:S2142<"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8êƒø¶2
 `
-java:S2276"CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(ÓÛâ²8»‘ã¢¶2
-W	java:S125""<This block of commented-out lines of code should be removed.(Êž¯%8ÁÐÀ£¶2
+java:S2276"CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(ÓÛâ²8‘¼ú÷¶2
+`
+java:S2276+"CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(¬Æ„°8íƒø¶2
 T
-java:S1481%"2Remove this unused "foodComponent" local variable.(ü‰§öøÿÿÿÿ8‡€Á£¶2
-X	java:S125&"<This block of commented-out lines of code should be removed.(žó²–8ÙæÀ£¶2
+java:S1481/"2Remove this unused "foodComponent" local variable.(ü‰§öøÿÿÿÿ8íƒø¶2
 `
-java:S2276,"CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(¹ÂÔ¨8ˆÄ€£¶2
-P
-java:S1068"3Remove this unused "waiterComponent" private field.(Ö‘Æè8Š€Á£¶2
+java:S22762"CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(¯ú™ú8îƒø¶2
+X	java:S1254"<This block of commented-out lines of code should be removed.(žó²–8îƒø¶2
+`
+java:S2276:"CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(Î–éÓ8ß‰²ø¶2

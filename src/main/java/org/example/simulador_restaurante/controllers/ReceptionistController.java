@@ -6,24 +6,21 @@ import org.example.simulador_restaurante.components.ReceptionistComponent;
 import org.example.simulador_restaurante.models.ReceptionistModel;
 import org.example.simulador_restaurante.models.TableModel;
 
-import java.util.Optional;
-
 public class ReceptionistController {
     private final ReceptionistModel receptionistModel;
     private final ReceptionistComponent receptionistComponent;
     private final TableModel tableModel;
 
-    public ReceptionistController(ReceptionistModel receptionistModel, ReceptionistComponent receptionistComponent) {
+    public ReceptionistController(ReceptionistModel receptionistModel, ReceptionistComponent receptionistComponent, TableModel tableModel) {
         this.receptionistModel = receptionistModel;
         this.receptionistComponent = receptionistComponent;
-        this.tableModel = new TableModel();
+        this.tableModel = tableModel;
     }
 
     public void manageEntrance(ClientComponent clientComponent) {
         new Thread(() -> {
             if (receptionistModel.tryToSit(clientComponent)) {
-
-                double[] freeTable = tableModel.searchTable();
+                double[] freeTable = tableModel.searchFreeTable(clientComponent.getId());
                 if (freeTable != null) {
                     Platform.runLater(() -> {
                         clientComponent.moveToPosition(freeTable[0], freeTable[1], 0, 5);
@@ -31,9 +28,6 @@ public class ReceptionistController {
                         clientComponent.setX(x);
                     });
                 }
-
-            } else {
-                clientComponent.moveToPosition(50, 50, 0);
             }
         }).start();
     }

@@ -5,7 +5,9 @@ import javafx.util.Duration;
 import org.example.simulador_restaurante.components.ChefComponent;
 import org.example.simulador_restaurante.components.ReceptionistComponent;
 import org.example.simulador_restaurante.components.TableComponent;
+import org.example.simulador_restaurante.components.WaiterComponent;
 import org.example.simulador_restaurante.controllers.ManagerController;
+import org.example.simulador_restaurante.controllers.WaiterController;
 import org.example.simulador_restaurante.entities.EntityManager;
 import org.example.simulador_restaurante.entities.GameEntityFactory;
 
@@ -37,19 +39,6 @@ public class InitGame {
             TableComponent table = new TableComponent();
             table.spawnTable(pos[0], pos[1]);
         });
-
-        ChefComponent chef = new ChefComponent();
-        chef.spawnChef(100, -50);
-
-        // Funcion que simula progreso, mover a controlador de chef
-        run(() -> {
-            double currentProgress = chef.getProgress().get() + 10;
-            chef.updateProgress(Math.min(currentProgress, 100));
-            if(currentProgress == 100){
-                chef.updateProgress(0);
-            }
-            return null;
-        }, Duration.seconds(1));
     }
 
     private void registerFactory(){
