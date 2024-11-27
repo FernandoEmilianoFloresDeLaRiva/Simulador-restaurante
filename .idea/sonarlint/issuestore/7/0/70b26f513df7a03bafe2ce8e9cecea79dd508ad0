@@ -7,7 +7,7 @@ W	java:S125""<This block of commented-out lines of code should be removed.(Ê¯
 T
 java:S1481%"2Remove this unused "foodComponent" local variable.(ü‰§öøÿÿÿÿ8‡€Á£¶2
 X	java:S125&"<This block of commented-out lines of code should be removed.(ó²–8ÙæÀ£¶2
-e
-java:S2276,"CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(ššõ•ùÿÿÿÿ8ˆÄ€£¶2
+`
+java:S2276,"CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(¹ÂÔ¨8ˆÄ€£¶2
 P
 java:S1068"3Remove this unused "waiterComponent" private field.(Ö‘Æè8Š€Á£¶2

@@ -1,11 +1,13 @@
 package org.example.simulador_restaurante.controllers;
 
+import javafx.application.Platform;
 import org.example.simulador_restaurante.components.ChefComponent;
 import org.example.simulador_restaurante.components.ClientComponent;
 import org.example.simulador_restaurante.components.ReceptionistComponent;
 import org.example.simulador_restaurante.components.WaiterComponent;
 import org.example.simulador_restaurante.models.ChefModel;
 import org.example.simulador_restaurante.models.ReceptionistModel;
+import org.example.simulador_restaurante.models.TableModel;
 import org.example.simulador_restaurante.models.WaiterModel;
 
 public class ManagerController {
@@ -30,12 +32,10 @@ public class ManagerController {
 
         new Thread(() -> {
             try {
-                int clienteId = 1;
                 while (true) {
-                    ClientComponent cliente = new ClientComponent();
-                    // cliente.spawnClient(900, 650);
-                    receptionistController.manageEntrance(cliente);
-
+                    ClientComponent clientComponent = new ClientComponent();
+                    receptionistController.manageEntrance(clientComponent);
+                    Platform.runLater(() -> clientComponent.spawnClient());
                     Thread.sleep((int) (Math.random() * 2000)); // Tiempo aleatorio entre llegadas (Hay que cambiarlo por poison)
                 }
             } catch (InterruptedException e) {

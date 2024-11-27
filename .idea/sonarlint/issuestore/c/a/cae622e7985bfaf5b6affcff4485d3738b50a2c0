@@ -1,9 +1,9 @@
 
-d
-java:S1192"IDefine a constant instead of duplicating this literal "Cliente " 3 times.(Æ™™üÿÿÿÿ
-–
-java:S1319-"{The return type of this method should be an interface such as "List" rather than the implementation "CopyOnWriteArrayList".(°¯ÒÏûÿÿÿÿ
-E	java:S106"+Replace this use of System.out by a logger.(Æ™™üÿÿÿÿ
-E	java:S106"+Replace this use of System.out by a logger.(ö÷‹ûÿÿÿÿ
-@	java:S106""+Replace this use of System.out by a logger.(È¬Ö“
-E	java:S106'"+Replace this use of System.out by a logger.(”ÌÖ‰úÿÿÿÿ
+k
+java:S1192"IDefine a constant instead of duplicating this literal "Cliente " 3 times.(Æ™™üÿÿÿÿ8‚­¤Î¶2
+
+java:S1319-"{The return type of this method should be an interface such as "List" rather than the implementation "CopyOnWriteArrayList".(°¯ÒÏûÿÿÿÿ8‚­¤Î¶2
+L	java:S106"+Replace this use of System.out by a logger.(Æ™™üÿÿÿÿ8‹­¤Î¶2
+L	java:S106"+Replace this use of System.out by a logger.(ö÷‹ûÿÿÿÿ8‹­¤Î¶2
+G	java:S106""+Replace this use of System.out by a logger.(È¬Ö“8Œ­¤Î¶2
+L	java:S106'"+Replace this use of System.out by a logger.(”ÌÖ‰úÿÿÿÿ8Œ­¤Î¶2

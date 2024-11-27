@@ -9,10 +9,10 @@ import javafx.util.Duration;
 import static com.almasb.fxgl.dsl.FXGLForKtKt.animationBuilder;
 
 public class EntityUtils {
-    public static void moveTo(Entity entity, double targetX, double targetY) {
+    public static void moveTo(Entity entity, double targetX, double targetY, int duration) {
         Point2D targetPosition = new Point2D(targetX, targetY);
         animationBuilder()
-                .duration(Duration.seconds(10))
+                .duration(Duration.seconds(duration))
                 .interpolator(Interpolator.LINEAR)
                 .translate(entity)
                 .to(targetPosition)
