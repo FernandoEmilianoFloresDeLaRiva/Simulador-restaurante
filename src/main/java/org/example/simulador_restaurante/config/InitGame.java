@@ -3,7 +3,6 @@ package org.example.simulador_restaurante.config;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 import org.example.simulador_restaurante.components.ChefComponent;
-import org.example.simulador_restaurante.components.FoodComponent;
 import org.example.simulador_restaurante.components.ReceptionistComponent;
 import org.example.simulador_restaurante.components.TableComponent;
 import org.example.simulador_restaurante.controllers.ManagerController;
@@ -13,9 +12,12 @@ import org.example.simulador_restaurante.entities.GameEntityFactory;
 import java.util.List;
 
 import static com.almasb.fxgl.dsl.FXGLForKtKt.*;
+import static org.example.simulador_restaurante.config.ConstantsConfig.TABLE_LIST_CONSTANT;
 
 public class InitGame {
     EntityManager _entityManager;
+    private List<TableComponent> tables;
+
     public InitGame (){
        this._entityManager = new EntityManager();
     }
@@ -30,22 +32,11 @@ public class InitGame {
         ReceptionistComponent receptionistComponent = new ReceptionistComponent();
         receptionistComponent.spawnReceptionist(870, 540);
 
-        List<double[]> positions = List.of(
-                new double[]{40, 130},
-                new double[]{40, 240},
-                new double[]{40, 350},
-                new double[]{40, 460},
-                new double[]{40, 570},
-                new double[]{440, 130},
-                new double[]{440, 240},
-                new double[]{440, 350},
-                new double[]{440, 460},
-                new double[]{440, 570}
-        );
-        for (double[] pos : positions) {
+        TABLE_LIST_CONSTANT.forEach(pos ->
+        {
             TableComponent table = new TableComponent();
             table.spawnTable(pos[0], pos[1]);
-        }
+        });
 
         ChefComponent chef = new ChefComponent();
         chef.spawnChef(100, -50);

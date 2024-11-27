@@ -7,6 +7,7 @@ import org.example.simulador_restaurante.components.ReceptionistComponent;
 import org.example.simulador_restaurante.components.WaiterComponent;
 import org.example.simulador_restaurante.models.ChefModel;
 import org.example.simulador_restaurante.models.ReceptionistModel;
+import org.example.simulador_restaurante.models.TableModel;
 import org.example.simulador_restaurante.models.WaiterModel;
 import org.example.simulador_restaurante.utils.GeneralUtils;
 
@@ -38,13 +39,11 @@ public class ManagerController {
                 while (true) {
                     int poissonRes = GeneralUtils.generateDistPoisson(5);
                     System.out.println(poissonRes);
-                    ClientComponent cliente = new ClientComponent();
-                    Platform.runLater(() -> {
-                        cliente.spawnClient(900, 650);
-                        receptionistController.manageEntrance(cliente);
-                    });
+                    ClientComponent clientComponent = new ClientComponent();
+                    receptionistController.manageEntrance(clientComponent);
+                    Platform.runLater(() -> clientComponent.spawnClient());
+                    Thread.sleep(poissonRes * 1000); 
 
-                    Thread.sleep(poissonRes * 1000); // Tiempo aleatorio entre llegadas (Hay que cambiarlo por poison)
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();

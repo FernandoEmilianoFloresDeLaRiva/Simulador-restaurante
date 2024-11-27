@@ -11,6 +11,6 @@ public class WaiterComponent {
         this.waiterEntity = _entityManager.spawnWaiter(x, y);
     }
     public void moveToPosition(double x, double y) {
-        EntityUtils.moveTo(this.waiterEntity, x, y);
+        EntityUtils.moveTo(this.waiterEntity, x, y, 10);
     }
 }

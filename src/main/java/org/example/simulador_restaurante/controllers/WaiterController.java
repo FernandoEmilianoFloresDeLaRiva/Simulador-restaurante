@@ -44,7 +44,7 @@ public class WaiterController {
                         Platform.runLater(() -> EntityManager.deleteEntity(clientComponent.getClientEntity()));
                         recepcionistModel.releaseTable();
 
-                        Thread.sleep(500); // Simula tiempo de servir
+                        Thread.sleep(5000); // Simula tiempo de servir
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     } finally {

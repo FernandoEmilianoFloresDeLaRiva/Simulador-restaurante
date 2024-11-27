@@ -17,7 +17,6 @@ public class HelloApplication extends GameApplication {
     protected void initGame() {
         InitGame _initGame = new InitGame();
         _initGame.runGame();
-
     }
 
     public static void main(String[] args) {
