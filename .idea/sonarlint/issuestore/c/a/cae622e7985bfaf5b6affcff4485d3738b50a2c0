@@ -1,0 +1,9 @@
+
+f
+java:S1192"IDefine a constant instead of duplicating this literal "Cliente " 3 times.(š—€—8Ñé÷¶2
+
+java:S1319-"{The return type of this method should be an interface such as "List" rather than the implementation "CopyOnWriteArrayList".(°¯ÒÏûÿÿÿÿ8Ñé÷¶2
+G	java:S106"+Replace this use of System.out by a logger.(š—€—8Ùé÷¶2
+L	java:S106"+Replace this use of System.out by a logger.(Ç‹åÛúÿÿÿÿ8Ùé÷¶2
+G	java:S106""+Replace this use of System.out by a logger.(È¬Ö“8Úé÷¶2
+G	java:S106'"+Replace this use of System.out by a logger.(¥ÆíĞ8Ûé÷¶2

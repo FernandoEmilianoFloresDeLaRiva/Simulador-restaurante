@@ -9,8 +9,13 @@ public class FoodComponent {
     private static final EntityManager _entityManager = new EntityManager();
     public void spawnFood(double x, double y){
         this.foodEntity = _entityManager.spawnFood(x, y);
+        EntityUtils.scaleEntity(this.foodEntity, 0.15, 0.15);
     }
-    public void moveToPosition(double x, double y) {
-        EntityUtils.moveTo(this.foodEntity, x, y);
+    public void moveToPosition(double x, double y, int duration) {
+        EntityUtils.moveTo(this.foodEntity, x, y, duration);
+    }
+
+    public Entity getFoodEntity() {
+        return foodEntity;
     }
 }

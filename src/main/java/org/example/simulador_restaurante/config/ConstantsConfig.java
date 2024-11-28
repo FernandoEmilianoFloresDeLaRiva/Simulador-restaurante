@@ -1,5 +1,8 @@
 package org.example.simulador_restaurante.config;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ConstantsConfig {
     public static final int WINDOW_WIDTH = 1200;
     public static final int WINDOW_HEIGTH = 760;
@@ -10,5 +13,16 @@ public class ConstantsConfig {
     public static final String RECEPTIONIST_CONSTANT = "receptionist";
     public static final String WAITER_CONSTANT = "waiter";
     public static final String WALL_CONSTANT = "wall";
-
+    public static List<double[]> TABLE_LIST_CONSTANT = new ArrayList<>(List.of(
+            new double[]{40, 130, 0, 0},
+            new double[]{40, 240, 0, 0},
+            new double[]{40, 350, 0, 0},
+            new double[]{40, 460, 0, 0},
+            new double[]{40, 570, 0, 0},
+            new double[]{440, 130, 0, 0},
+            new double[]{440, 240, 0, 0},
+            new double[]{440, 350, 0, 0},
+            new double[]{440, 460, 0, 0},
+            new double[]{440, 570, 0, 0}
+        ));
 }

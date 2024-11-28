@@ -14,7 +14,6 @@ public class ChefComponent {
         this.chefEntity = _entityManager.spawnChef(x, y);
         EntityUtils.scaleEntity(this.chefEntity, 0.3, 0.3);
         _entityManager.spawnProgressBar(100, 20, this.progress, this.chefEntity);
-
     }
 
     public void updateProgress(double value) {

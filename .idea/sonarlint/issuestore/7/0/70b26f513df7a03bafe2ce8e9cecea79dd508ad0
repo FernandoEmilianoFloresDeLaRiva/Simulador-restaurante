@@ -1,0 +1,13 @@
+
+{
+java:S2142B"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8ÇÁù¶2
+`
+java:S2276 "CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(ÓÛâ²8‘ÇÁù¶2
+`
+java:S2276+"CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(¬Æ„°8’ÇÁù¶2
+`
+java:S22760"CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(¬Æ„°8“ÇÁù¶2
+`
+java:S22768"CReplace the call to "Thread.sleep(...)" with a call to "wait(...)".(¬Æ„°8“ÇÁù¶2
+m
+java:S1128"PRemove this unused import 'org.example.simulador_restaurante.utils.EntityUtils'.(¼”ç8¾µÂù¶2
